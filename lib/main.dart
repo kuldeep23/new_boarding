@@ -17,14 +17,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
+  MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(title,
                 style: TextStyle(
                   color: Colors.teal.shade700,
-                  fontSize: 32,
+                  fontSize: 28,
                   fontWeight: FontWeight.bold,
                 )),
             const SizedBox(
@@ -85,9 +85,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: Container(
         padding: const EdgeInsets.only(bottom: 80),
         child: PageView(
@@ -99,10 +96,10 @@ class _MyHomePageState extends State<MyHomePage> {
           },
           children: [
             buildPage(
-                color: Colors.green.shade100,
+                color: Colors.deepOrange.shade200,
                 urlImage:
                     'https://assets8.lottiefiles.com/packages/lf20_kzvh3s9g.json',
-                title: 'REDUCE',
+                title: 'VISTOR MANAGEMENT',
                 subtitle:
                     'It is for the information of the Board that there is requirement of the LED Strips Grow Light for beautification of different places in Cantt area'),
             buildPage(
@@ -128,8 +125,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(1)),
                   primary: Colors.white,
-                  backgroundColor: Colors.teal.shade700,
-                  minimumSize: Size.fromHeight(90)),
+                  backgroundColor: Colors.deepOrange.shade400,
+                  minimumSize: Size.fromHeight(80)),
               onPressed: () async {
                 /*Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return HomePage();
@@ -149,9 +146,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       onPressed: () {
                         controller.jumpToPage(2);
                       },
-                      child: const Text(
+                      child: Text(
                         'SKIP',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.deepOrange.shade400),
                       )),
                   Center(
                     child: SmoothPageIndicator(
@@ -160,7 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       effect: WormEffect(
                         spacing: 16,
                         dotColor: Colors.black26,
-                        activeDotColor: Colors.teal.shade700,
+                        activeDotColor: Colors.deepOrange.shade400,
                       ),
                       onDotClicked: (index) => controller.animateToPage(index,
                           duration: const Duration(milliseconds: 500),
@@ -173,8 +172,10 @@ class _MyHomePageState extends State<MyHomePage> {
                             duration: const Duration(milliseconds: 500),
                             curve: Curves.easeOut);
                       },
-                      child: const Text('NEXT',
-                          style: TextStyle(fontWeight: FontWeight.bold)))
+                      child: Text('NEXT',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.deepOrange.shade400)))
                 ],
               ),
             ),
