@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import 'HomePage.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -63,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(title,
                 style: TextStyle(
-                  color: Colors.teal.shade700,
+                  color: Colors.deepOrange.shade400,
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
                 )),
@@ -91,31 +93,52 @@ class _MyHomePageState extends State<MyHomePage> {
           controller: controller,
           onPageChanged: (index) {
             setState(() {
-              isLastPage = (index == 2);
+              isLastPage = (index == 5);
             });
           },
           children: [
             buildPage(
-                color: Colors.deepOrange.shade200,
+                color: Colors.green.shade200,
                 urlImage:
-                    'https://assets8.lottiefiles.com/packages/lf20_kzvh3s9g.json',
-                title: 'VISTOR MANAGEMENT',
+                    'https://assets1.lottiefiles.com/packages/lf20_pzk9h5cf.json',
+                title: 'VISITORS MANAGEMENT',
                 subtitle:
-                    'It is for the information of the Board that there is requirement of the LED Strips Grow Light for beautification of different places in Cantt area'),
+                    'Simple tracking of visitors, cabs, and even deliveries! Regardless of whether you are a member of society or not, it is a one-stop shop for all of your guest management needs.'),
             buildPage(
                 color: Colors.red.shade100,
                 urlImage:
-                    'https://assets10.lottiefiles.com/packages/lf20_jmejybvu.json',
-                title: 'REDUCE',
+                    'https://assets5.lottiefiles.com/packages/lf20_KU3FGB47d6.json',
+                title: 'STAFF MANAGEMENT',
                 subtitle:
-                    'It is for the information of the Board that there is requirement of the LED Strips Grow Light for beautification of different places in Cantt area'),
+                    'Receive an alert as soon as one of your staff enters the society\'s facilities. The best-rated domestic help should be chosen for your home, and you should keep track of their attendance digitally.'),
+            buildPage(
+                color: Colors.blue.shade200,
+                urlImage:
+                    'https://assets9.lottiefiles.com/packages/lf20_BJ9mFCqhen.json',
+                title: 'COMMUNICATION',
+                subtitle:
+                    'Notices, announcements, and alerts. Everything is here! Know everything there is to know about society.'),
+            buildPage(
+                color: Colors.teal.shade200,
+                urlImage:
+                    'https://assets10.lottiefiles.com/packages/lf20_vw3zs7wow6.json',
+                title: 'COMPLAINT MANAGEMENT',
+                subtitle:
+                    'Get quick resolution to your complaints! You only need to file a complaint in this place. You can monitor the status of your complaint at any moment, and the committee members will be immediately notified.'),
             buildPage(
                 color: Colors.deepOrange.shade100,
                 urlImage:
-                    'https://assets6.lottiefiles.com/packages/lf20_5e7wgehs.json',
-                title: 'REDUCE',
+                    'https://assets4.lottiefiles.com/packages/lf20_uMjybUoeGN.json',
+                title: 'AMENITIES BOOKING',
                 subtitle:
                     'It is for the information of the Board that there is requirement of the LED Strips Grow Light for beautification of different places in Cantt area'),
+            buildPage(
+                color: Colors.yellow.shade200,
+                urlImage:
+                    'https://assets10.lottiefiles.com/packages/lf20_qmfs6c3i.json',
+                title: 'NOTICES',
+                subtitle:
+                    'You must be aware of what is going on in your culture. Visit the digital notice board to learn more. Find everything here, including society meetings and updates.'),
           ],
         ),
       ),
@@ -128,9 +151,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   backgroundColor: Colors.deepOrange.shade400,
                   minimumSize: Size.fromHeight(80)),
               onPressed: () async {
-                /*Navigator.push(context, MaterialPageRoute(builder: (context) {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return HomePage();
-                }));*/
+                }));
               },
               child: const Text(
                 'Get Started',
@@ -144,7 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   TextButton(
                       onPressed: () {
-                        controller.jumpToPage(2);
+                        controller.jumpToPage(5);
                       },
                       child: Text(
                         'SKIP',
@@ -155,7 +178,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Center(
                     child: SmoothPageIndicator(
                       controller: controller,
-                      count: 3,
+                      count: 6,
                       effect: WormEffect(
                         spacing: 16,
                         dotColor: Colors.black26,
